@@ -23,5 +23,24 @@ namespace ProductManagement
                     + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
             }
         }
+        /// <summary>
+        /// In this UC we retriving all records whose ratings greater than 3 and product ID 1 or 4 or 9 using Linq
+        /// </summary>
+        /// <param name="review"></param>
+        public void SelectedRecords(List<ProductReview> review)
+        {
+            var recordedData = from productReviews in review
+                               //Retriving data any one on 1 or 4 or 9 here using or operator
+                               where (productReviews.ProductID == 1 || productReviews.ProductID == 4 || productReviews.ProductID == 9)
+                               //must be greater than 3
+                               && productReviews.Rating > 3
+                               select productReviews;
+            //Printing the Products
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductID:-" + list.ProductID + " " + "UserID:-" + list.UserID
+                    + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
+            }
+        }
     }
 }

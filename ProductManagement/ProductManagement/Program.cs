@@ -44,8 +44,13 @@ namespace ProductManagement
                     + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
             }
             //UC2_printing top 3 products
+            Console.WriteLine("\nUC2- Top 3 Records");
             Management management = new Management();
             management.TopRecords(productReview);
+
+            //UC3_Retriving data Using linq
+            Console.WriteLine("\nRetriving data greater than 3 ratings");
+            management.SelectedRecords(productReview);
         }
     }
 }
