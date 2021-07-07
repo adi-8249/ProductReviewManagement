@@ -43,6 +43,9 @@ namespace ProductManagement
                 Console.WriteLine("ProductID:-" + list.ProductID + " " + "UserID:-" + list.UserID
                     + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
             }
+            //UC2_printing top 3 products
+            Management management = new Management();
+            management.TopRecords(productReview);
         }
     }
 }
