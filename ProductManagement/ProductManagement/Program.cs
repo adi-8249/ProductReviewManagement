@@ -37,7 +37,7 @@ namespace ProductManagement
                 new ProductReview(){ProductID=24,UserID=10,Rating=2,Review="Bad",isLike=true},
                 new ProductReview(){ProductID=25,UserID=2,Rating=4,Review="Good",isLike=true},
             };
-            //Priting the 25 products using foreach loop
+            //Iterating the 25 products using foreach loop
             foreach (var list in productReview)
             {
                 Console.WriteLine("ProductID:-" + list.ProductID + " " + "UserID:-" + list.UserID
