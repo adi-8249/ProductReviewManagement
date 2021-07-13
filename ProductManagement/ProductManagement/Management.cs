@@ -42,5 +42,17 @@ namespace ProductManagement
                     + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
             }
         }
+        /// <summary>
+        ///UC4- Retriving count of the review available for each product
+        /// </summary>
+        /// <param name="review"></param>
+        public void RetrieveCountOfRecords(List<ProductReview> review)
+        {
+            var recordedData = review.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + "==>" + list.Count);
+            }
+        }
     }
 }

@@ -49,8 +49,12 @@ namespace ProductManagement
             management.TopRecords(productReview);
 
             //UC3_Retriving data Using linq
-            Console.WriteLine("\nRetriving data greater than 3 ratings");
+            Console.WriteLine("\nUC3_Retriving data greater than 3 ratings");
             management.SelectedRecords(productReview);
+
+            //UC4_Retriving count of review for each product
+            Console.WriteLine("UC4_retriving count of review each product");
+            management.RetrieveCountOfRecords(productReview);
         }
     }
 }
