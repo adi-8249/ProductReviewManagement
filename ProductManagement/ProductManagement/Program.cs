@@ -56,8 +56,12 @@ namespace ProductManagement
             //UC4_Retriving count of review for each product
             Console.WriteLine("\nUC4_retriving count of review each product:------------------------------");
             management.RetrieveCountOfRecords(productReview);
+
             Console.WriteLine("\nUC5-Retriving ProductsId and review from list:------------------------------");
             management.RetrieveOnlyProductIdAndReview(productReview);
+
+            Console.WriteLine("\nUC6-Skiping first five records from list:-----------------------");
+            management.SkipTopFiveRecords(productReview);
         }
     }
 }
