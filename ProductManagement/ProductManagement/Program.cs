@@ -62,6 +62,9 @@ namespace ProductManagement
 
             Console.WriteLine("\nUC6-Skiping first five records from list:-----------------------");
             management.SkipTopFiveRecords(productReview);
+
+            Console.WriteLine("\nUC7-Retriving productId and revies using Linq:-------------------");
+            management.SelectIdAndReview(productReview);
         }
     }
 }
