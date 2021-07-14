@@ -9,9 +9,10 @@ namespace ProductManagement
         {
             Console.WriteLine("Welcome to product review management system!");
             //UC1-Adding 25 Default value in the list
+            Console.WriteLine("\nUC1-Listing the products with properties:-----------------");
             List<ProductReview> productReview = new List<ProductReview>()
             {
-                 new ProductReview(){ProductID=1,UserID=1,Rating=5,Review="Good",isLike=true},
+                new ProductReview(){ProductID=1,UserID=1,Rating=5,Review="Good",isLike=true},
                 new ProductReview(){ProductID=2,UserID=1,Rating=4,Review="Good",isLike=true},
                 new ProductReview(){ProductID=3,UserID=2,Rating=5,Review="Good",isLike=true},
                 new ProductReview(){ProductID=4,UserID=2,Rating=4,Review="Good",isLike=true},
@@ -44,17 +45,19 @@ namespace ProductManagement
                     + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
             }
             //UC2_printing top 3 products
-            Console.WriteLine("\nUC2- Top 3 Records");
+            Console.WriteLine("\nUC2- Top 3 Records:------------------");
             Management management = new Management();
             management.TopRecords(productReview);
 
             //UC3_Retriving data Using linq
-            Console.WriteLine("\nUC3_Retriving data greater than 3 ratings");
+            Console.WriteLine("\nUC3_Retriving data greater than 3 ratings:-----------------------------");
             management.SelectedRecords(productReview);
 
             //UC4_Retriving count of review for each product
-            Console.WriteLine("UC4_retriving count of review each product");
+            Console.WriteLine("\nUC4_retriving count of review each product:------------------------------");
             management.RetrieveCountOfRecords(productReview);
+            Console.WriteLine("\nUC5-Retriving ProductsId and review from list:------------------------------");
+            management.RetrieveOnlyProductIdAndReview(productReview);
         }
     }
 }

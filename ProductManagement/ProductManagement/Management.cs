@@ -9,13 +9,17 @@ namespace ProductManagement
 {
     public class Management
     {
+        /// <summary>
+        /// UC2-Listing the products by order with descending as per ratings
+        /// </summary>
+        /// <param name="review"></param>
         public void TopRecords(List<ProductReview> review)
         {
 
             var recordedData = (from productReviews in review
                                     //This is giving Records of top 3 records in descending order
                                 orderby productReviews.Rating descending 
-                                select productReviews).Take(3);
+                                select productReviews).Take(3);//here it will take only 3 ratings
             //Iterating the Records to print top 3 products
             foreach (var list in recordedData)
             {
@@ -24,7 +28,7 @@ namespace ProductManagement
             }
         }
         /// <summary>
-        /// In this UC we retriving all records whose ratings greater than 3 and product ID 1 or 4 or 9 using Linq
+        /// UC3- we retriving all the records whose ratings greater than 3 and product ID 1 or 4 or 9 using Linq
         /// </summary>
         /// <param name="review"></param>
         public void SelectedRecords(List<ProductReview> review)
@@ -52,6 +56,19 @@ namespace ProductManagement
             foreach (var list in recordedData)
             {
                 Console.WriteLine(list.ProductID + "==>" + list.Count);
+            }
+        }
+        /// <summary>
+        /// UC5-Retriving only productId and reviews 
+        /// </summary>
+        /// <param name="review"></param>
+        public void RetrieveOnlyProductIdAndReview(List<ProductReview> review)
+        {
+            var recordedData = from productReviews in review
+                               select new { productReviews.ProductID, productReviews.Review };
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductID:-" + list.ProductID + " " + "Review:-" + list.Review);
             }
         }
     }

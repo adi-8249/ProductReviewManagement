@@ -6,6 +6,9 @@ namespace ProductManagement
 {
     public class ProductReview
     {
+        /// <summary>
+        /// Using get set properties getting and setting the values
+        /// </summary>
         public int ProductID { get; set; }
         public int UserID { get; set; }
         public double Rating { get; set; }
