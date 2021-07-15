@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductManagement
 {
@@ -65,6 +66,11 @@ namespace ProductManagement
 
             Console.WriteLine("\nUC7-Retriving productId and revies using Linq:-------------------");
             management.SelectIdAndReview(productReview);
+
+            Console.WriteLine("\nUC9-Retriving data from data table whose ISLIKE is true:-----------------");
+            DataTableOperation dataTable = new DataTableOperation();
+            DataTable table = dataTable.CreateDataTable();
+            dataTable.DisplayIsLikeValueTrue(table);
         }
     }
 }

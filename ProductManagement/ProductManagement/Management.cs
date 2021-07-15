@@ -84,7 +84,7 @@ namespace ProductManagement
             }
         }
         /// <summary>
-        /// Retriving product id and revies using Linq
+        /// UC7-Retriving product id and revies using Linq
         /// </summary>
         /// <param name="review"></param>
         public void SelectIdAndReview(List<ProductReview> review)

@@ -7,7 +7,7 @@ namespace ProductManagement
 {
     public class DataTableOperation
     {
-        public void CreateDataTable()
+        public DataTable CreateDataTable()
         {
             DataTable table = new DataTable();
             table.Columns.Add("ProductID");
@@ -41,7 +41,21 @@ namespace ProductManagement
             table.Rows.Add(23, 1, 5, "Good", true);
             table.Rows.Add(24, 1, 6, "Good", false);
             table.Rows.Add(25, 1, 2, "bad", true);
+            return table;
+        }
+        /// <summary>
+        /// UC9-retriving data whose IsLike is true from DataTable
+        /// </summary>
+        /// <param name="table"></param>
+        public void DisplayIsLikeValueTrue(DataTable table)
+        {
+            var records = from products in table.AsEnumerable().Where(x => x["isLike"].Equals(true)) select products;
 
+            Console.WriteLine("List of IsLike value in Data");
+            foreach (var product in records)
+            {
+                Console.WriteLine("ProductID : " + product.Field<int>("ProductID") + " " + "UserID : " + product.Field<int>("UserID") + " " + "Rating : " + product.Field<float>("Rating") + " " + "Review : " + product.Field<string>("Review") + " " + "IsLike : " + product.Field<bool>("IsLike") + " ");
+            } 
         }
     }
 }
