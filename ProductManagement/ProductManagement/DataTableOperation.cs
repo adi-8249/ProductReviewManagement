@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using System.Linq;
 
 namespace ProductManagement
 {
@@ -55,7 +56,25 @@ namespace ProductManagement
             foreach (var product in records)
             {
                 Console.WriteLine("ProductID : " + product.Field<int>("ProductID") + " " + "UserID : " + product.Field<int>("UserID") + " " + "Rating : " + product.Field<float>("Rating") + " " + "Review : " + product.Field<string>("Review") + " " + "IsLike : " + product.Field<bool>("IsLike") + " ");
-            } 
+            }
+        }
+        
+        public void AverageRatingProductID(DataTable dataTable)
+        {
+            try
+            {
+                var average = (from product in dataTable.AsEnumerable()
+                               select (product.Field<float>("Rating"))).Average();
+                Console.WriteLine("Average Rating of productId " + average);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
+
+
+
+          

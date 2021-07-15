@@ -71,6 +71,9 @@ namespace ProductManagement
             DataTableOperation dataTable = new DataTableOperation();
             DataTable table = dataTable.CreateDataTable();
             dataTable.DisplayIsLikeValueTrue(table);
+
+            Console.WriteLine("\nUC10-Finding the avg ratings of each ID:-------------------------");
+            dataTable.AverageRatingProductID(table);
         }
     }
 }
